@@ -1,0 +1,23 @@
+void Delete_End()
+{
+    Node *temp=front;
+    if(front==NULL)
+    {
+        cout<<"Underflow!!! The list is empty!"<<endl;
+    }
+    else if(temp->next==NULL)
+    {
+        front=rear=NULL;
+    }
+    else
+    {
+        while((temp->next)->next!=NULL)
+        {
+            temp=temp->next;
+        }
+        save=temp->next;
+        temp->next=NULL;
+        rear=temp;
+        delete save;
+    }
+}
